@@ -2,25 +2,82 @@ document.addEventListener("DOMContentLoaded", () => {
  
     const buttons = document.querySelectorAll(".btn");
     const stickyHeader = document.querySelector('.sticky-header');
+    const state = document.querySelectorAll(".imgstates");
+    const animatedbutton = document.querySelector(".animatedbutton");
 
 
 
-    const title1 = document.getElementById('title1');
-    const title1_cont = document.getElementById('title1_cont');
-    const paragraph1 = document.getElementById('paragraph1');
-    const paragraph1_cont = document.getElementById('paragraph1_cont');
-    const bottombuttons = document.getElementById('bottombuttons')
+    
+    const bottombuttons = document.querySelector('.bottombuttons')
+    const landing_content= document.querySelectorAll('.landing_content')
+
+ 
+    const titles = document.querySelectorAll('.title'); 
+    const titleContainers = document.querySelectorAll('.title_cont'); 
+    const paragraphs = document.querySelectorAll('.paragraph'); 
+    const paragraphContainers = document.querySelectorAll('.paragraph_cont'); 
+
+    function addslide(index){
+        titles[index].classList.add('slide');
+        paragraphs[index]?.classList.add('slide'); 
+        titleContainers[index].classList.add('slide');
+        paragraphContainers[index]?.classList.add('slide'); 
+    }
+
+    function removeslide(index){
+        titles[index].classList.remove('slide');
+        paragraphs[index]?.classList.remove('slide'); 
+        titleContainers[index].classList.remove('slide');
+        paragraphContainers[index]?.classList.remove('slide'); 
+    }
+   
+
+    function buttonmouseoverevent(index){
+        buttons[index].addEventListener('mouseover', () => {
+            state[index].style.opacity = '1'; 
+            state[index].style.filter = ' brightness(100%) blur(0px)';
+
+            titles[index+1].style.transition= 'left 1s ease ';
+            paragraphs[index+1].style.transition= 'left 1s ease';
+            titleContainers[index+1].style.transition= 'all 1s ease-in-out';
+            paragraphContainers[index+1].style.transition= 'all 1s ease-in-out';
+            landing_content[index+1].style.opacity= '1';
+
+            addslide(index+1)
+        });
+    }
+
+    function buttonmouseoutevent(index){
+        buttons[index].addEventListener('mouseout', () => {
+            state[index].style.opacity = '0'; 
+            state[index].style.filter = ' brightness(130%) blur(2px)';
+
+            titles[index+1].style.transition= 'none';
+            paragraphs[index+1].style.transition= 'none';
+            titleContainers[index+1].style.transition= 'none';
+            paragraphContainers[index+1].style.transition= 'none';
+            landing_content[index+1].style.opacity= '0';
+            removeslide(index+1)
+        });
+    }
+
+    titles[0].classList.add('slide');
+    setTimeout(() => {
+        paragraphs[0]?.classList.add('slide'); 
+    }, 200);
+    titleContainers[0].classList.add('slide');
+    setTimeout(() => {
+        paragraphContainers[0]?.classList.add('slide'); 
+    }, 300);
+    setTimeout(() => {
+        animatedbutton.classList.add('slide'); 
+    }, 1000);
 
 
-    title1.classList.add('slide');
-    setTimeout(()=>{
-        paragraph1.classList.add('slide');
-    },300);
-
-    title1_cont.classList.add('slide');
-    setTimeout(()=>{
-        paragraph1_cont.classList.add('slide');
-    },200);
+    buttons.forEach((button, index) => {
+        buttonmouseoverevent(index);
+        buttonmouseoutevent(index);
+    });
 
     window.addEventListener('scroll', () => {
         if (window.scrollY >= 140) {
@@ -29,49 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
             stickyHeader.classList.remove('fixed');
         }
     });
-
-
-
-    buttons.forEach((button, index) => {
-        buttons[index].addEventListener('mouseover', () => {
-            state1.style.opacity = '1'; 
-            state1.style.filter = ' brightness(100%) blur(0px)';
-            title2.style.transition= 'left 1s ease ';
-            paragraph2.style.transition= 'left 1s ease';
-            title2_cont.style.transition= 'all 1s ease-in-out';
-            paragraph2_cont.style.transition= 'all 1s ease-in-out';
-    
-            landing_content2.style.opacity= '1';
-    
-            title2.classList.add('slide');
-            paragraph2.classList.add('slide');
-    
-            title2_cont.classList.add('slide');
-            paragraph2_cont.classList.add('slide');
-
-
-
-        buttons[index].addEventListener('mouseout', () => {
-            state1.style.opacity = '0'; 
-            state1.style.filter = ' brightness(130%) blur(2px)';
-    
-            title2.style.transition= 'none ';
-            paragraph2.style.transition= 'none';
-            title2_cont.style.transition= 'none';
-            paragraph2_cont.style.transition= 'none';
-            
-            landing_content2.style.opacity= '0';
-    
-            title2.classList.remove('slide');
-            paragraph2.classList.remove('slide');
-            title2_cont.classList.remove('slide');
-            paragraph2_cont.classList.remove('slide');
-            });
-        }); 
-    });
-    
-
-
 
 
     
@@ -86,10 +100,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     bottombuttons.addEventListener('mouseover',()=>{
-        landing_content.style.opacity = '0';
+        landing_content[0].style.opacity = '0';
     });
     bottombuttons.addEventListener('mouseout',()=>{
-        landing_content.style.opacity = '1';
+        landing_content[0].style.opacity = '1';
     });
 
 
@@ -101,6 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 button.classList.add("slide");
             }, index * 150); 
         });
-    }, 800); 
+    }, 1500); 
         
 });
