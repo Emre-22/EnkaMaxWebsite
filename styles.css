@@ -735,6 +735,7 @@ a{
   width: 100%;
 }
 .seg1{
+  padding: 2%;
   width: 100%;
   min-height: 50px;
   display: flex;
@@ -755,6 +756,8 @@ a{
 }
 
 .seg2{
+  padding: 3%;
+
   width: 100%;
   min-height: 50%;
   border-top: var(--mainBlue) solid 1px;
