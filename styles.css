@@ -720,8 +720,7 @@ a{
 }
 
 .Footer{
-  height: 70vh;
-  min-height: 500px;
+  min-height: 200px;
   width: 100%;
   top: 0;
   left: 0;
@@ -729,10 +728,15 @@ a{
   radial-gradient(circle at bottom right,rgba(184, 184, 184, 1) 0%,rgb(197, 197, 197) 90%);  display: flex;  
   flex-direction: column;
 }
-
+.segline{
+  padding-bottom: 3px;
+  background-color: rgb(250, 250, 250);
+  border-top: rgb(200, 200, 200) solid 3px;
+  width: 100%;
+}
 .seg1{
   width: 100%;
-  height: 25%;
+  min-height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -752,7 +756,7 @@ a{
 
 .seg2{
   width: 100%;
-  height: 50%;
+  min-height: 50%;
   border-top: var(--mainBlue) solid 1px;
   border-bottom: var(--mainBlue) solid 1px;
   display: flex;
@@ -760,7 +764,7 @@ a{
   align-items: center;
 }
 .seg2 li{
-  padding: 10%;
+  padding: 10px;
   
 }
 .seg2 ul{
@@ -787,7 +791,7 @@ a{
   font-size: 100%;
   color: var(--Blue3);
   line-height: normal;
-  padding: 5%;
+  padding: 50px;
 }
 
 
