@@ -7,7 +7,7 @@ html, body {
     --lightgray: #777; 
 
 
-    --mainBlue: #1c4294;
+    /* --mainBlue: #1c4294;
     --mainBlue08: #1c4294d9; 
     --Blue1: #1D378E;
     --Blue108: #1D378Ed9; 
@@ -17,8 +17,8 @@ html, body {
     --Blue308: #1F2284d9; 
     --Blue4: #20187F;
     --Blue408: #20187Fd9;
-    
-    /* --mainBlue: #1b485c;
+     */
+    --mainBlue: #1b485c;
     --mainBlue08: #1b485cd9; 
     --Blue1: #194152;
     --Blue108: #194152d9; 
@@ -27,7 +27,7 @@ html, body {
     --Blue3: #15333e;
     --Blue308: #15333ed9; 
     --Blue4: #122c34;
-    --Blue408: #122c34d9;  */
+    --Blue408: #122c34d9; 
 
 
   }
@@ -599,7 +599,10 @@ mask-size: 110%;
   left: 50%;
   padding-bottom: 5%;
   border-radius: 7px;
+  overflow: hidden;
 }
+
+
 
 .fancybox .two-column-layout{
   gap: 0;
@@ -619,7 +622,6 @@ mask-size: 110%;
 }
 
 .fancybox li {
-  padding: 30px;
   border-bottom: rgba(211, 211, 211, 0.322) solid 1px; 
   position: relative;
 }
@@ -692,8 +694,10 @@ mask-size: 110%;
 }
 
 .fancybox a{
-  width: 500px;
-  padding: 10px 10px 10px 10px;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 40px 10px 40px 10px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
 }
@@ -714,6 +718,10 @@ a{
   top: 0;
   left: 0;
   background-color: rgb(250,250,250);
+  display: flex;
+  justify-content: space-around;
+  gap: 10%;
+  padding: 10%;
 }
 .removed{
   display: none;
@@ -1092,8 +1100,7 @@ a{
  
   .fancybox li{
     padding: 0;
-    padding-top: 2.5%;  
-    padding-bottom: 2.5%;  
+
     text-align: center;
     justify-content: center;
 
@@ -1129,4 +1136,9 @@ a{
   .two-column-layout a{
   font-size: .7rem;
 }
+}
+
+
+.black{
+  color: var(--Blue1);
 }
