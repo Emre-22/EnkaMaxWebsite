@@ -1142,3 +1142,59 @@ a{
 .black{
   color: var(--Blue1);
 }
+
+
+.section4{
+  position: relative;
+  height: fit-content;
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(250, 250, 250);
+
+}
+.section4 .fa-caret-up{
+  position: absolute;
+  color: rgb(250, 250, 250);
+  font-size: 100px;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%) scaleY(-1);
+
+}
+
+.fancybox2container{
+  display: flex;
+  max-width: 2200px ;
+  margin: 9%;
+}
+
+.fancybox2{
+  background-color: var(--mainBlue) ;
+  background: radial-gradient(circle at top left,var(--Blue108),var(--Blue208) 90%),
+              radial-gradient(circle at bottom right,var(--Blue1) 0%,var(--Blue1) 90%);
+  padding: 4%;
+  position: relative;
+  height: fit-content;
+  margin: 5%;
+  border-radius: 5px;
+}
+
+
+.thumbnail_container{
+  margin-top: 10%;
+  overflow: hidden;
+  max-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.thumbnail{
+  width: 100%;
+}
+
+@media (max-width: 1100px) { 
+  .section4,.fancybox2container{
+  flex-direction: column;
+  }
+
+}
