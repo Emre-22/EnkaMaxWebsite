@@ -170,7 +170,7 @@ html, body {
   left: 50%;
   transform: translateX(-90%);
   width: 25px;
-  height: 2px;
+  height: 1px;
   font-size: 80px;
   pointer-events: none;
   color: inherit;
