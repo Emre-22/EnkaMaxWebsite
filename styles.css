@@ -402,6 +402,8 @@ h1{
   font-family: 'Empira';
   text-align: left;
   transition: left 1s ease;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .landing_content h1{
@@ -807,6 +809,10 @@ a{
 
 
 @media (max-width: 1100px) { 
+  h1{
+    font-size: 30px;
+    line-height: normal;
+  }
   .seg2{
     height:  unset;
     justify-content: center;
