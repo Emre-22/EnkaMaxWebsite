@@ -382,7 +382,7 @@ overflow: visible;
 
 /*#region LANDING PAGE CONTENT*/
 .landing_content{
-  top: 38%;
+  top: 34%;
   left: 11%;
   position: absolute;
   z-index: 8;
@@ -521,7 +521,7 @@ mask-size: 110%;
 .landing{
   position: relative;
   height: 100vh;
-  min-height: 800px;
+  min-height: 500px;
   width: 100%;
   top: 0;
   display: flex;
